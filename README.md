@@ -1,6 +1,6 @@
 # Telegram Scraper and Adder Bot
 
-This repository contains a Python script for scraping members from Telegram groups or channels and adding them to another channel.
+This repository contains Python scripts for scraping members from Telegram groups or channels and adding them to another channel.
 
 ## Features
 
@@ -42,28 +42,38 @@ This repository contains a Python script for scraping members from Telegram grou
    - Create a new application by providing the required details.
    - You will receive an API ID and an API hash.
 
-2. **Edit the credentials:**
-    - Open the `add_in_channel.py` file and update the following variables with your Telegram API credentials and phone number:
+2. **Edit the credentials in both `scrapper.py` and `add_in_channel.py`:**
+    - Open the `add_in_channel.py`and `scrapper.py` file and update the following variables with your Telegram API credentials and phone number:
       ```python
       api_id = 'your_api_id'
       api_hash = 'your_api_hash'
       phone = 'your_phone_number'
       ```
 
-3. **Prepare the input CSV file:**
-    - Ensure you have a CSV file (`input_file.csv`) with the following columns: `sr. no.`, `username`, `user id`, `name`, `status`.
-    - Place the CSV file in the same directory as the script or update the path in the script accordingly.
-
 ## Usage
 
-1. **Run the script:**
+### Scraping Members
+
+1. **Run the `scrapper.py` script to scrape members and generate a CSV file:**
+    ```bash
+    python scrapper.py
+    ```
+
+2. **Follow the prompts:**
+    - Enter the code sent to your Telegram account.
+    - Select the group or channel to scrape members from.
+    - The script will generate a CSV file with the scraped members.
+
+### Adding Members
+
+1. **Run the `add_in_channel.py` script to add members to a specified channel:**
     ```bash
     python add_in_channel.py
     ```
 
 2. **Follow the prompts:**
     - Enter the code sent to your Telegram account.
-    - Select the file to use for adding members.
+    - Select the CSV file to use for adding members.
     - Enter the target group or channel name.
     - Choose whether to add all members or specify a range.
 
